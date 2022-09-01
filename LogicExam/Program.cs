@@ -8,30 +8,32 @@ namespace LogicExam
     {
         static void Main(string[] args)
         {
-            //--------------------------------------INPUT---------------------------------------------------------------
+            //--------------------------------------INPUTS---------------------------------------------------------------
             string inputCharacter1 = "we the people of the united states in order to form a more perfect union etc";
             string inputCharacter2 = "cheating is not allowed";
             string inputCharacter3 = "the rocks";
-
             //----------------------------------------------------------------------------------------------------------
             encodeMessage(inputCharacter1);
             encodeMessage(inputCharacter2);
             encodeMessage(inputCharacter3);
         }
 
-        static void encodeMessage(string inputMessage) {
+        static void encodeMessage(string inputMessage)
+        {
             string inputCharacterNoSpaces = inputMessage.Replace(" ", ""); // removing spaces
             int L = inputCharacterNoSpaces.Length; // computing L
             double sqrtL = Math.Sqrt(L); // sqrt(L) to fullfil main requirement
             int columns = Convert.ToInt32(Math.Ceiling(sqrtL));
-            int rows = Convert.ToInt32(Math.Floor(sqrtL)); // since row can not be greated than column floor value is assigned, then it might change when building table
+            int rows = Convert.ToInt32(Math.Floor(sqrtL)); // since row can not be greater than column: floor value is assigned, then it might change when building table
             if (columns * rows < L)
             {
                 rows += 1;
             }
             List<List<string>> table = buildTable(columns, rows, L, inputCharacterNoSpaces);
             string message = buildMessageFromTable(columns, rows, L, table);
+            printTable(table);
             Console.WriteLine(message);
+            Console.WriteLine();
         }
 
         static List<List<string>> buildTable(int columns, int rows, int L, string inputCharacterNoSpaces)
@@ -76,6 +78,20 @@ namespace LogicExam
             }
             return message;
         }
-    }
 
+        static void printTable(List<List<string>> table)
+        {
+            string rowToPrint = "";
+            foreach (List<string> row in table)
+            {
+                foreach (string c in row)
+                {
+                    rowToPrint = rowToPrint.Insert(rowToPrint.Length, c);
+                }
+                Console.WriteLine(rowToPrint);
+                rowToPrint = "";
+            }
+            Console.WriteLine();
+        }
+    }
 }
