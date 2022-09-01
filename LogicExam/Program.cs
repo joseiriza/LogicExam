@@ -9,9 +9,18 @@ namespace LogicExam
         static void Main(string[] args)
         {
             //--------------------------------------INPUT---------------------------------------------------------------
-            string inputCharacter = "we the people of the united states in order to form a more perfect union etc";
+            string inputCharacter1 = "we the people of the united states in order to form a more perfect union etc";
+            string inputCharacter2 = "cheating is not allowed";
+            string inputCharacter3 = "the rocks";
+
             //----------------------------------------------------------------------------------------------------------
-            string inputCharacterNoSpaces = inputCharacter.Replace(" ", ""); // removing spaces
+            encodeMessage(inputCharacter1);
+            encodeMessage(inputCharacter2);
+            encodeMessage(inputCharacter3);
+        }
+
+        static void encodeMessage(string inputMessage) {
+            string inputCharacterNoSpaces = inputMessage.Replace(" ", ""); // removing spaces
             int L = inputCharacterNoSpaces.Length; // computing L
             double sqrtL = Math.Sqrt(L); // sqrt(L) to fullfil main requirement
             int columns = Convert.ToInt32(Math.Ceiling(sqrtL));
