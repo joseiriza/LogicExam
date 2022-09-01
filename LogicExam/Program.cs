@@ -9,13 +9,13 @@ namespace LogicExam
         static void Main(string[] args)
         {
             //--------------------------------------INPUTS---------------------------------------------------------------
-            string inputCharacter1 = "we the people of the united states in order to form a more perfect union etc";
-            string inputCharacter2 = "cheating is not allowed";
-            string inputCharacter3 = "the rocks";
+            string inputMessage1 = "we the people of the united states in order to form a more perfect union etc";
+            string inputMessage2 = "cheating is not allowed";
+            string inputMessage3 = "the rocks";
             //----------------------------------------------------------------------------------------------------------
-            encodeMessage(inputCharacter1);
-            encodeMessage(inputCharacter2);
-            encodeMessage(inputCharacter3);
+            encodeMessage(inputMessage1);
+            encodeMessage(inputMessage2);
+            encodeMessage(inputMessage3);
         }
 
         static void encodeMessage(string inputMessage)
