@@ -32,6 +32,7 @@ namespace LogicExam
             List<List<string>> table = buildTable(columns, rows, L, inputCharacterNoSpaces);
             string message = buildMessageFromTable(columns, rows, L, table);
             printTable(table);
+            Console.WriteLine();
             Console.WriteLine(message);
             Console.WriteLine();
         }
@@ -91,7 +92,6 @@ namespace LogicExam
                 Console.WriteLine(rowToPrint);
                 rowToPrint = "";
             }
-            Console.WriteLine();
         }
     }
 }
