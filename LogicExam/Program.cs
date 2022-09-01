@@ -42,7 +42,7 @@ namespace LogicExam
             int columnToWrite = 0;
             int rowToWrite = 1; // starting to count from 1
             List<string> rowToInsert = new List<string>();
-            List<List<string>> table = new List<List<string>>(); //a table con be show as a list of list, other data structures might be considered
+            List<List<string>> table = new List<List<string>>(); //a table can be shown as a list of lists, other data structures might be considered
             foreach (char c in inputCharacterNoSpaces)
             {
                 rowToInsert.Add(c.ToString());
