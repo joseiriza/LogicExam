@@ -24,8 +24,8 @@ namespace LogicExam
             int L = inputCharacterNoSpaces.Length; // computing L
             double sqrtL = Math.Sqrt(L); // sqrt(L) to fullfil main requirement
             int columns = Convert.ToInt32(Math.Ceiling(sqrtL));
-            int rows = Convert.ToInt32(Math.Floor(sqrtL)); // since row can not be greater than column: floor value is assigned, then it might change when building table
-            if (columns * rows < L)
+            int rows = Convert.ToInt32(Math.Floor(sqrtL)); // since row can not be greater than column: floor value is assigned, then it might change
+            if (columns * rows < L) // taking smallest area condition is checked
             {
                 rows += 1;
             }
@@ -41,7 +41,7 @@ namespace LogicExam
             int columnToWrite = 0;
             int rowToWrite = 1; // starting to count from 1
             List<string> rowToInsert = new List<string>();
-            List<List<string>> table = new List<List<string>>();
+            List<List<string>> table = new List<List<string>>(); //a table con be show as a list of list, other data structures might be considered
             foreach (char c in inputCharacterNoSpaces)
             {
                 rowToInsert.Add(c.ToString());
